@@ -1,0 +1,12 @@
+---
+name: superpowers-tdd-only
+description: Just TDD enforcement without full workflow - for projects that want TDD discipline only
+---
+
+extends: foundation:base
+
+agents:
+  - superpowers:tdd-enforcer
+
+context:
+  - superpowers:context/adapter.md

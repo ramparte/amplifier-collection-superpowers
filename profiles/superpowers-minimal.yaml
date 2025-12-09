@@ -1,0 +1,14 @@
+---
+name: superpowers-minimal
+description: Minimal superpowers setup with design, planning, and TDD enforcement only
+---
+
+extends: foundation:base
+
+agents:
+  - superpowers:design-refiner
+  - superpowers:plan-writer
+  - superpowers:tdd-enforcer
+
+context:
+  - superpowers:context/adapter.md
