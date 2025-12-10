@@ -3,7 +3,16 @@ profile:
   name: superpowers-dev
   version: 1.0.0
   description: Complete superpowers workflow with TDD discipline and full agent suite
-  extends: developer-expertise:dev
+  extends: developer-expertise:profiles/dev.md
+
+session:
+  context:
+    module: context-persistent
+    source: git+https://github.com/microsoft/amplifier-module-context-persistent@main
+    config:
+      max_tokens: 200000
+      compact_threshold: 0.9
+      auto_compact: true
 
 agents:
   - design-refiner
