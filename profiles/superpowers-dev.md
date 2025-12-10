@@ -26,12 +26,51 @@ providers:
 
 tools:
   - module: tool-filesystem
+    source: git+https://github.com/microsoft/amplifier-module-tool-filesystem@main
   - module: tool-bash
+    source: git+https://github.com/microsoft/amplifier-module-tool-bash@main
   - module: tool-grep
+    source: git+https://github.com/microsoft/amplifier-module-tool-grep@main
+  - module: tool-web
+    source: git+https://github.com/microsoft/amplifier-module-tool-web@main
+  - module: tool-search
+    source: git+https://github.com/microsoft/amplifier-module-tool-search@main
   - module: tool-task
+    source: git+https://github.com/microsoft/amplifier-module-tool-task@main
+  - module: tool-todo
+    source: git+https://github.com/microsoft/amplifier-module-tool-todo@main
 
 hooks:
+  - module: hooks-status-context
+    source: git+https://github.com/microsoft/amplifier-module-hooks-status-context@main
+    config:
+      include_git: true
+      git_include_status: true
+      git_include_commits: 5
+      git_include_branch: true
+      git_include_main_branch: true
+      include_datetime: true
+      datetime_include_timezone: false
+  - module: hooks-redaction
+    source: git+https://github.com/microsoft/amplifier-module-hooks-redaction@main
+    config:
+      allowlist:
+        - session_id
+        - turn_id
+        - span_id
+        - parent_span_id
   - module: hooks-logging
+    source: git+https://github.com/microsoft/amplifier-module-hooks-logging@main
+    config:
+      mode: session-only
+      session_log_template: ~/.amplifier/projects/{project}/sessions/{session_id}/events.jsonl
+  - module: hooks-todo-reminder
+    source: git+https://github.com/microsoft/amplifier-module-hooks-todo-reminder@main
+    config:
+      inject_role: user
+      priority: 10
+  - module: hooks-streaming-ui
+    source: git+https://github.com/microsoft/amplifier-module-hooks-streaming-ui@main
 
 agents:
   - design-refiner
@@ -48,6 +87,12 @@ context:
   - context/adapter.md
   - context/philosophy-bridge.md
   - context/workflow-integration.md
+---
+
+# Core Instructions
+
+@foundation:context/shared/common-agent-base.md
+
 ---
 
 # Superpowers Development Profile
