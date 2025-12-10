@@ -28,7 +28,7 @@ hooks:
   - module: hooks-logging
 
 agents:
-  - tdd-enforcer
+  - superpowers:tdd-enforcer
 
 context:
   - context/adapter.md
