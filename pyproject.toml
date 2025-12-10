@@ -44,6 +44,7 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build]
 include = [
+    "pyproject.toml",
     "agents/**/*.md",
     "profiles/**/*.yaml",
     "context/**/*.md",
