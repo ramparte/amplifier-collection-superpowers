@@ -41,3 +41,20 @@ integration = "git-submodule"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.hatch.build]
+include = [
+    "agents/**/*.md",
+    "profiles/**/*.yaml",
+    "context/**/*.md",
+    "scripts/**/*.sh",
+    "examples/**/*.md",
+    "superpowers/**/*",
+    "collection.yaml",
+    "README.md",
+    "LICENSE",
+    "CONTRIBUTING.md",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = []
