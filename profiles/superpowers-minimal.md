@@ -29,8 +29,9 @@ hooks:
   - module: hooks-logging
 
 agents:
-  - superpowers:tdd-enforcer
-  - superpowers:code-reviewer
+  include:
+    - tdd-enforcer
+    - code-reviewer
 
 context:
   - context/adapter.md

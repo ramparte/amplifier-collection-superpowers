@@ -34,15 +34,16 @@ hooks:
   - module: hooks-logging
 
 agents:
-  - superpowers:design-refiner
-  - superpowers:plan-writer
-  - superpowers:tdd-enforcer
-  - superpowers:subagent-orchestrator
-  - superpowers:plan-executor
-  - superpowers:code-reviewer
-  - superpowers:branch-finalizer
-  - superpowers:debugger
-  - superpowers:worktree-manager
+  include:
+    - design-refiner
+    - plan-writer
+    - tdd-enforcer
+    - subagent-orchestrator
+    - plan-executor
+    - code-reviewer
+    - branch-finalizer
+    - debugger
+    - worktree-manager
 
 context:
   - context/adapter.md
