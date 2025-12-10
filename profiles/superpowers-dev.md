@@ -26,6 +26,12 @@ agents:
   - worktree-manager
 ---
 
+# Core Instructions
+
+@foundation:context/shared/common-profile-base.md
+
+---
+
 # Superpowers Development Profile
 
 You have access to the complete superpowers workflow for TDD-driven software development.
