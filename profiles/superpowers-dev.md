@@ -24,11 +24,6 @@ agents:
   - branch-finalizer
   - debugger
   - worktree-manager
-
-context:
-  - context/adapter.md
-  - context/philosophy-bridge.md
-  - context/workflow-integration.md
 ---
 
 # Superpowers Development Profile
@@ -37,15 +32,15 @@ You have access to the complete superpowers workflow for TDD-driven software dev
 
 ## Available Agents
 
-1. **design-refiner**: Refine requirements and designs using superpowers brainstorming
-2. **plan-writer**: Write comprehensive implementation plans
+1. **design-refiner**: Refine requirements and designs using Socratic method before writing code
+2. **plan-writer**: Write comprehensive implementation plans following superpowers methodology
 3. **tdd-enforcer**: Enforce test-driven development discipline
-4. **subagent-orchestrator**: Coordinate parallel subagents
-5. **plan-executor**: Execute plans step-by-step
-6. **code-reviewer**: Structured code review
-7. **branch-finalizer**: Finalize development branches
-8. **debugger**: Systematic debugging
-9. **worktree-manager**: Manage git worktrees
+4. **subagent-orchestrator**: Dispatch and coordinate parallel subagents using superpowers patterns
+5. **plan-executor**: Execute plans step-by-step following superpowers execution methodology
+6. **code-reviewer**: Review code using superpowers requesting/receiving code review methodology
+7. **branch-finalizer**: Finalize development branches following superpowers completion checklist
+8. **debugger**: Systematic debugging using superpowers root-cause-tracing methodology
+9. **worktree-manager**: Manage git worktrees using superpowers git-worktree patterns
 
 ## Superpowers Philosophy
 
