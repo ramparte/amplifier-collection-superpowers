@@ -1,13 +1,28 @@
 ---
-meta:
+profile:
   name: superpowers-dev
-  description: "Complete superpowers workflow with TDD discipline and full agent suite"
+  version: 1.0.0
+  description: Complete superpowers workflow with TDD discipline and full agent suite
+
+session:
+  orchestrator:
+    module: loop-streaming
+    source: git+https://github.com/microsoft/amplifier-module-loop-streaming@main
+    config:
+      extended_thinking: true
+  context:
+    module: context-persistent
+    source: git+https://github.com/microsoft/amplifier-module-context-persistent@main
+    config:
+      max_tokens: 200000
+      compact_threshold: 0.9
+      auto_compact: true
 
 providers:
   - module: provider-anthropic
     source: git+https://github.com/microsoft/amplifier-module-provider-anthropic@main
     config:
-      model: claude-sonnet-4-5
+      default_model: claude-sonnet-4-5
 
 tools:
   - module: tool-filesystem
@@ -19,22 +34,20 @@ hooks:
   - module: hooks-logging
 
 agents:
-  include:
-    - design-refiner
-    - plan-writer
-    - tdd-enforcer
-    - subagent-orchestrator
-    - plan-executor
-    - code-reviewer
-    - branch-finalizer
-    - debugger
-    - worktree-manager
+  - design-refiner
+  - plan-writer
+  - tdd-enforcer
+  - subagent-orchestrator
+  - plan-executor
+  - code-reviewer
+  - branch-finalizer
+  - debugger
+  - worktree-manager
 
 context:
-  include:
-    - context/adapter.md
-    - context/philosophy-bridge.md
-    - context/workflow-integration.md
+  - context/adapter.md
+  - context/philosophy-bridge.md
+  - context/workflow-integration.md
 ---
 
 # Superpowers Development Profile

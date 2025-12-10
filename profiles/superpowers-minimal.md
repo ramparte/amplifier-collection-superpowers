@@ -1,13 +1,24 @@
 ---
-meta:
+profile:
   name: superpowers-minimal
-  description: "Minimal superpowers profile with just TDD enforcement and code review"
+  version: 1.0.0
+  description: Minimal superpowers profile with just TDD enforcement and code review
+
+session:
+  orchestrator:
+    module: loop-streaming
+    source: git+https://github.com/microsoft/amplifier-module-loop-streaming@main
+  context:
+    module: context-persistent
+    source: git+https://github.com/microsoft/amplifier-module-context-persistent@main
+    config:
+      max_tokens: 100000
 
 providers:
   - module: provider-anthropic
     source: git+https://github.com/microsoft/amplifier-module-provider-anthropic@main
     config:
-      model: claude-sonnet-4-5
+      default_model: claude-sonnet-4-5
 
 tools:
   - module: tool-filesystem
@@ -18,14 +29,12 @@ hooks:
   - module: hooks-logging
 
 agents:
-  include:
-    - tdd-enforcer
-    - code-reviewer
+  - tdd-enforcer
+  - code-reviewer
 
 context:
-  include:
-    - context/adapter.md
-    - context/philosophy-bridge.md
+  - context/adapter.md
+  - context/philosophy-bridge.md
 ---
 
 # Superpowers Minimal Profile
