@@ -3,7 +3,7 @@ profile:
   name: superpowers-dev
   version: 1.0.0
   description: Complete superpowers workflow with TDD discipline and full agent suite
-  extends: developer-expertise:profiles/dev.md
+  extends: developer-expertise:dev
 
 agents:
   - design-refiner
