@@ -14,8 +14,6 @@ providers:
       model: claude-sonnet-4-5
 ---
 
-@superpowers:context/adapter.md
-@superpowers:context/workflow-integration.md
 
 # Plan Writer Agent
 

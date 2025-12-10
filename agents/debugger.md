@@ -14,7 +14,6 @@ providers:
       model: claude-sonnet-4-5
 ---
 
-@superpowers:context/adapter.md
 
 # Debugger Agent
 
