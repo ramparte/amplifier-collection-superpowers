@@ -2,15 +2,6 @@
 meta:
   name: worktree-manager
   description: "Manage git worktrees using superpowers git-worktree patterns"
-
-tools:
-  - module: tool-filesystem
-  - module: tool-bash
-
-providers:
-  - module: provider-anthropic
-    config:
-      model: claude-sonnet-4-5
 ---
 
 

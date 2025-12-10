@@ -2,16 +2,6 @@
 meta:
   name: plan-writer
   description: "Write comprehensive implementation plans following superpowers methodology"
-
-tools:
-  - module: tool-filesystem
-  - module: tool-bash
-  - module: tool-grep
-
-providers:
-  - module: provider-anthropic
-    config:
-      model: claude-sonnet-4-5
 ---
 
 

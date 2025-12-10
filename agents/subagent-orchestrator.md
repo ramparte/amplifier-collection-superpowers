@@ -2,16 +2,6 @@
 meta:
   name: subagent-orchestrator
   description: "Dispatch and coordinate parallel subagents using superpowers patterns"
-
-tools:
-  - module: tool-filesystem
-  - module: tool-bash
-  - module: tool-task
-
-providers:
-  - module: provider-anthropic
-    config:
-      model: claude-sonnet-4-5
 ---
 
 

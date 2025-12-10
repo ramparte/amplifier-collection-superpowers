@@ -2,17 +2,6 @@
 meta:
   name: plan-executor
   description: "Execute plans step-by-step following superpowers execution methodology"
-
-tools:
-  - module: tool-filesystem
-  - module: tool-bash
-  - module: tool-grep
-  - module: tool-task
-
-providers:
-  - module: provider-anthropic
-    config:
-      model: claude-sonnet-4-5
 ---
 
 

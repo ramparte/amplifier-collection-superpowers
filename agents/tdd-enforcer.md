@@ -2,16 +2,6 @@
 meta:
   name: tdd-enforcer
   description: "Enforce test-driven development discipline from superpowers methodology"
-
-tools:
-  - module: tool-filesystem
-  - module: tool-bash
-  - module: tool-grep
-
-providers:
-  - module: provider-anthropic
-    config:
-      model: claude-sonnet-4-5
 ---
 
 

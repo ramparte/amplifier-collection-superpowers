@@ -2,16 +2,6 @@
 meta:
   name: debugger
   description: "Systematic debugging using superpowers root-cause-tracing methodology"
-
-tools:
-  - module: tool-filesystem
-  - module: tool-bash
-  - module: tool-grep
-
-providers:
-  - module: provider-anthropic
-    config:
-      model: claude-sonnet-4-5
 ---
 
 
