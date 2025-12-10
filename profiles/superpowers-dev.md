@@ -26,9 +26,7 @@ agents:
   - worktree-manager
 ---
 
-# Core Instructions
-
-@foundation:context/shared/common-profile-base.md
+@foundation:context/shared/common-agent-base.md
 
 ---
 
