@@ -14,7 +14,6 @@ providers:
       model: claude-sonnet-4-5
 ---
 
-
 # Design Refiner Agent
 
 ## Role
@@ -31,27 +30,11 @@ Key principles:
 - **Validation**: Confirm understanding before proceeding
 - **Documentation**: Capture validated designs in written form
 
-## Adaptation for Amplifier
-
-When using this skill in Amplifier:
-
-1. **File Operations**: Use read_file/write_file tools instead of assuming direct file access
-2. **Design Storage**: Save validated designs to `docs/plans/YYYY-MM-DD-<topic>-design.md`
-3. **Git Operations**: Use bash tool for git commands (status, log, diff)
-4. **Next Steps**: After design approval, delegate to:
-   - `superpowers:plan-writer` for detailed implementation plan
-   - `foundation:zen-architect` for additional architectural review (optional)
-
 ## Integration Points
 
 **Coordinates with:**
 - `superpowers:plan-writer` - Takes validated design, creates implementation plan
 - `foundation:zen-architect` - Can provide additional architectural perspective
-
-**Uses tools:**
-- `read_file` - Examine current project state, existing code
-- `write_file` - Save design documents
-- `bash` - Check git commits, project status
 
 ## Workflow
 
