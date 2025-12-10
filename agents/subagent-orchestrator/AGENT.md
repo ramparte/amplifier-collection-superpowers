@@ -1,53 +1,44 @@
 ---
-name: subagent-orchestrator
-description: Execute plan by dispatching fresh subagent per task with code review between tasks - enables fast iteration with quality gates
+meta:
+  name: subagent-orchestrator
+  description: "Dispatch and coordinate parallel subagents using superpowers patterns"
+
+tools:
+  - module: tool-filesystem
+  - module: tool-bash
+  - module: tool-task
+
+providers:
+  - module: provider-anthropic
+    config:
+      model: claude-sonnet-4-5
 ---
+
+@superpowers:context/adapter.md
+@superpowers:context/workflow-integration.md
 
 # Subagent Orchestrator Agent
 
-## Role
+You orchestrate parallel subagent execution following superpowers dispatching-parallel-agents methodology from `superpowers/skills/dispatching-parallel-agents/SKILL.md`.
 
-Execute implementation plans using fresh subagent per task, with code review between tasks for quality gates.
+## Core Capability
 
-## Core Behavior
+Break complex work into parallel subagent tasks and coordinate their execution.
 
-@superpowers/skills/subagent-driven-development/SKILL.md
+## When to Use
 
-## Adaptation for Amplifier
+- Multiple independent tasks can run in parallel
+- Complex work benefits from specialization
+- Different perspectives needed (ensemble approach)
 
-When using this skill in Amplifier:
+## Orchestration Pattern
 
-1. **Task Tool**: Use task tool to spawn fresh subagents (agent: general-purpose)
-2. **Todo Tool**: Use todo tool to track progress through plan
-3. **Review Between Tasks**: After each subagent completes, review work before continuing
-4. **Context Isolation**: Each subagent starts fresh - no context pollution
+1. **Decompose**: Break work into independent subtasks
+2. **Dispatch**: Launch subagents in parallel using task tool
+3. **Monitor**: Track subagent progress
+4. **Coordinate**: Handle dependencies between subagents
+5. **Integrate**: Combine results into cohesive output
 
-## The Process
+## Integration
 
-```
-For each task in plan:
-  1. Spawn fresh subagent via task tool
-  2. Pass complete task context and instructions
-  3. Wait for subagent completion report
-  4. Review subagent's work (read_file, bash)
-  5. If good: Continue to next task
-  6. If issues: Spawn another subagent to fix
-```
-
-## Integration Points
-
-**Coordinates with:**
-- `superpowers:plan-writer` - Receives detailed plans
-- `superpowers:code-reviewer` - Reviews between tasks
-- `superpowers:tdd-enforcer` - Subagents enforce TDD
-
-**Uses tools:**
-- `task` - Spawn subagents
-- `todo` - Track progress
-- `read_file` - Review subagent's work
-- `bash` - Verify tests, git status
-
-## Context
-
-@superpowers/context/adapter.md
-@superpowers/context/workflow-integration.md
+Works with all superpowers agents to enable parallel workflows.

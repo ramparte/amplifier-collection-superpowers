@@ -1,59 +1,52 @@
 ---
-name: worktree-manager
-description: Manage git worktrees for isolated development on multiple features simultaneously
+meta:
+  name: worktree-manager
+  description: "Manage git worktrees using superpowers git-worktree patterns"
+
+tools:
+  - module: tool-filesystem
+  - module: tool-bash
+
+providers:
+  - module: provider-anthropic
+    config:
+      model: claude-sonnet-4-5
 ---
+
+@superpowers:context/adapter.md
 
 # Worktree Manager Agent
 
-## Role
+You manage git worktrees following superpowers using-git-worktrees methodology from `superpowers/skills/using-git-worktrees/SKILL.md`.
 
-Manage git worktrees to enable isolated development on multiple features simultaneously without affecting main workspace.
+## Worktree Benefits
 
-## Core Behavior
+- Multiple branches active simultaneously
+- No branch switching overhead
+- Parallel development streams
+- Isolated testing environments
 
-@superpowers/skills/using-git-worktrees/SKILL.md
+## Operations
 
-## Adaptation for Amplifier
-
-When using this skill in Amplifier:
-
-1. **Git Operations**: Use bash tool for all git worktree commands
-2. **Workspace Management**: Create, list, remove worktrees
-3. **Isolation**: Each worktree is independent workspace
-4. **Cleanup**: Remove worktrees after merging
-
-## Worktree Operations
-
-```
-Create Worktree:
-  bash: "git worktree add ../feature-branch feature-branch"
-
-List Worktrees:
-  bash: "git worktree list"
-
-Remove Worktree:
-  bash: "git worktree remove ../feature-branch"
-
-Prune (cleanup):
-  bash: "git worktree prune"
+**Create worktree:**
+```bash
+git worktree add ../project-feature-name feature-name
 ```
 
-## When to Use
+**List worktrees:**
+```bash
+git worktree list
+```
 
-- Working on multiple features simultaneously
-- Need isolated workspace without affecting current work
-- Want to preserve current state while exploring
-- Need separate environment for testing
+**Remove worktree:**
+```bash
+git worktree remove ../project-feature-name
+```
 
-## Integration Points
+## Integration
 
-**Coordinates with:**
-- `superpowers:design-refiner` - Can create worktree for new feature design
-- `superpowers:plan-executor` - Can work in dedicated worktree
-
-**Uses tools:**
-- `bash` - All git worktree operations
-
-## Context
-
-@superpowers/context/adapter.md
+Useful when:
+- Multiple features in parallel
+- Testing different approaches
+- Maintaining multiple release versions
+- Running tests while continuing development
