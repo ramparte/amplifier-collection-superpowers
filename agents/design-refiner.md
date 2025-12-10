@@ -2,16 +2,6 @@
 meta:
   name: design-refiner
   description: "Interactive design refinement using Socratic method before writing code"
-
-tools:
-  - module: tool-filesystem
-  - module: tool-bash
-  - module: tool-grep
-
-providers:
-  - module: provider-anthropic
-    config:
-      model: claude-sonnet-4-5
 ---
 
 # Design Refiner Agent
