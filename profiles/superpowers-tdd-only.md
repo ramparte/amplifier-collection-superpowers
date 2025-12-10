@@ -2,7 +2,7 @@
 profile:
   name: superpowers-tdd-only
   version: 1.0.0
-  description: Pure TDD enforcement profile from superpowers
+  description: Pure TDD enforcement profile
 
 session:
   orchestrator:
@@ -28,8 +28,7 @@ hooks:
   - module: hooks-logging
 
 agents:
-  include:
-    - tdd-enforcer
+  - tdd-enforcer
 
 context:
   - context/adapter.md
@@ -37,32 +36,6 @@ context:
 
 # Superpowers TDD-Only Profile
 
-Pure test-driven development enforcement from superpowers methodology.
+Pure test-driven development enforcement.
 
-## Available Agent
-
-**tdd-enforcer**: Enforce test-driven development principles from superpowers
-
-## Philosophy
-
-This profile is laser-focused on one thing: **TDD discipline**.
-
-From superpowers test-driven-development skill:
-- Write tests first, always
-- Red-Green-Refactor cycle
-- No code without tests
-- Test coverage is non-negotiable
-
-## When to Use
-
-Use this profile when you want:
-- Pure TDD enforcement
-- No distractions, just TDD
-- Learning TDD discipline
-- Ensuring test-first approach
-
-## Workflow
-
-Simple: **Test first, code second, refactor third.**
-
-The tdd-enforcer agent will guide you through the Red-Green-Refactor cycle.
+**Test first, code second, refactor third.**

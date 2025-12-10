@@ -2,7 +2,7 @@
 profile:
   name: superpowers-minimal
   version: 1.0.0
-  description: Minimal superpowers profile with just TDD enforcement and code review
+  description: Minimal superpowers profile with just TDD and code review
 
 session:
   orchestrator:
@@ -29,9 +29,8 @@ hooks:
   - module: hooks-logging
 
 agents:
-  include:
-    - tdd-enforcer
-    - code-reviewer
+  - tdd-enforcer
+  - code-reviewer
 
 context:
   - context/adapter.md
@@ -40,30 +39,6 @@ context:
 
 # Superpowers Minimal Profile
 
-A lightweight superpowers profile focused on TDD discipline and code review.
-
-## Available Agents
-
-1. **tdd-enforcer**: Enforce test-driven development principles
-2. **code-reviewer**: Review code using superpowers methodology
-
-## Philosophy
-
-This profile provides the essential superpowers capabilities:
-- **TDD Discipline**: Tests first, always
-- **Code Quality**: Structured review process
-
-## When to Use
-
-Use this profile when you want:
-- Lightweight superpowers integration
-- Focus on TDD and review only
-- Minimal overhead
-- Fast iteration cycles
-
-## Workflow
-
-1. Use **tdd-enforcer** during implementation to maintain TDD discipline
-2. Use **code-reviewer** before merging to ensure quality
+Lightweight superpowers profile focused on TDD discipline and code review.
 
 Simple, focused, effective.
