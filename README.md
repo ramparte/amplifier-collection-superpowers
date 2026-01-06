@@ -1,14 +1,14 @@
-# Amplifier Collection: Superpowers
+# Amplifier Bundle: Superpowers
 
 **Import-based integration of [obra/superpowers](https://github.com/obra/superpowers) for Amplifier**
 
-This collection provides a complete software development workflow with TDD discipline by importing superpowers as a git submodule and wrapping its skills as Amplifier agents.
+This bundle provides a complete software development workflow with TDD discipline by importing superpowers as a git submodule and wrapping its skills as Amplifier agents.
 
 ## What is This?
 
 **obra/superpowers** is a complete software development workflow built on composable "skills" (markdown-based process documentation) that enforce best practices like TDD, design-first thinking, and subagent-driven development.
 
-**This collection** creates thin wrapper agents (~30 lines each) that:
+**This bundle** creates thin wrapper agents (~30 lines each) that:
 - Reference superpowers skills via Amplifier's @mention system
 - Adapt superpowers for Amplifier's tools (read_file, write_file, bash, task)
 - Enable you to stay synchronized with superpowers updates automatically
@@ -23,38 +23,39 @@ This collection provides a complete software development workflow with TDD disci
 - Amplifier installed
 - Git with submodule support
 
-### Install Collection
+### Install Bundle
 
 ```bash
-amplifier collection add git+https://github.com/ramparte/amplifier-collection-superpowers
+# Run directly from GitHub
+amplifier run --bundle git+https://github.com/ramparte/amplifier-bundle-superpowers@main:bundle-dev.md "Your task"
 ```
 
 Or clone and use locally:
 
 ```bash
-git clone --recursive https://github.com/ramparte/amplifier-collection-superpowers
-amplifier collection add /path/to/amplifier-collection-superpowers
+git clone --recursive https://github.com/ramparte/amplifier-bundle-superpowers
+amplifier run --bundle ./amplifier-bundle-superpowers/bundle-dev.md "Your task"
 ```
 
 ---
 
 ## Quick Start
 
-### Load a Profile
+### Choose a Bundle
 
 **Full workflow:**
 ```bash
-amplifier --profile superpowers:superpowers-dev
+amplifier run --bundle superpowers:bundle-dev.md "Your task"
 ```
 
-**Minimal (design + planning + TDD):**
+**Minimal (TDD + code review):**
 ```bash
-amplifier --profile superpowers:superpowers-minimal
+amplifier run --bundle superpowers:bundle-minimal.md "Your task"
 ```
 
 **TDD only:**
 ```bash
-amplifier --profile superpowers:superpowers-tdd-only
+amplifier run --bundle superpowers:bundle-tdd-only.md "Your task"
 ```
 
 ### Use the Workflow

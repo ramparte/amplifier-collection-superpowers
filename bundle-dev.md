@@ -1,9 +1,14 @@
 ---
-profile:
+bundle:
   name: superpowers-dev
   version: 1.0.0
-  description: Complete superpowers workflow with TDD discipline and full agent suite
-  extends: developer-expertise:profiles/dev.md
+  description: "Complete superpowers workflow with TDD discipline and full agent suite"
+  author: "Jesse Vincent (obra) - Adapted by ramparte"
+  license: MIT
+  repository: https://github.com/ramparte/amplifier-bundle-superpowers
+
+includes:
+  - foundation:dev
 
 session:
   context:
@@ -15,18 +20,19 @@ session:
       auto_compact: true
 
 agents:
-  - design-refiner
-  - plan-writer
-  - tdd-enforcer
-  - subagent-orchestrator
-  - plan-executor
-  - code-reviewer
-  - branch-finalizer
-  - debugger
-  - worktree-manager
+  include:
+    - superpowers:design-refiner
+    - superpowers:plan-writer
+    - superpowers:tdd-enforcer
+    - superpowers:subagent-orchestrator
+    - superpowers:plan-executor
+    - superpowers:code-reviewer
+    - superpowers:branch-finalizer
+    - superpowers:debugger
+    - superpowers:worktree-manager
 ---
 
-# Superpowers Development Profile
+# Superpowers Development Bundle
 
 You have access to the complete superpowers workflow for TDD-driven software development.
 
@@ -50,3 +56,7 @@ You have access to the complete superpowers workflow for TDD-driven software dev
 - **Verification Before Completion**: Always verify work meets requirements
 - **Systematic Debugging**: Hypothesis-driven, methodical bug fixing
 - **Plan-Execute-Review Cycle**: Plan thoroughly, execute carefully, review rigorously
+
+## Upstream Source
+
+This bundle adapts patterns from [obra/superpowers](https://github.com/obra/superpowers) for the Amplifier ecosystem.
