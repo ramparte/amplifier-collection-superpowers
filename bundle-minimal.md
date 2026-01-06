@@ -2,37 +2,27 @@
 bundle:
   name: superpowers-minimal
   version: 1.0.0
-  description: "Minimal superpowers profile with just TDD and code review"
-  author: "Jesse Vincent (obra) - Adapted by ramparte"
+  description: "Minimal bundle with core capabilities only"
+  author: "Amplifier Team"
   license: MIT
   repository: https://github.com/ramparte/amplifier-bundle-superpowers
 
 includes:
-  - foundation:dev
-
-session:
-  context:
-    module: context-persistent
-    source: git+https://github.com/microsoft/amplifier-module-context-persistent@main
-    config:
-      max_tokens: 100000
-
-agents:
-  include:
-    - superpowers:tdd-enforcer
-    - superpowers:code-reviewer
+  - bundle: git+https://github.com/microsoft/amplifier-foundation@main
 ---
-
-@superpowers:context/adapter.md
-@superpowers:context/philosophy-bridge.md
 
 # Superpowers Minimal Bundle
 
-Lightweight superpowers bundle focused on TDD discipline and code review.
+Lightweight bundle with essential capabilities only.
 
-## Available Agents
+## What This Provides
 
-- **tdd-enforcer**: Enforce test-driven development discipline
-- **code-reviewer**: Review code using superpowers methodology
+- Core filesystem operations
+- Basic bash access
+- Essential search tools
 
-Simple, focused, effective.
+## Usage
+
+```bash
+amplifier run --bundle superpowers-minimal "Quick task..."
+```

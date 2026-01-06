@@ -1,35 +1,29 @@
 ---
 bundle:
-  name: superpowers-tdd-only
+  name: superpowers-tdd
   version: 1.0.0
-  description: "Pure TDD enforcement profile"
-  author: "Jesse Vincent (obra) - Adapted by ramparte"
+  description: "Test-driven development focused bundle"
+  author: "Amplifier Team"
   license: MIT
   repository: https://github.com/ramparte/amplifier-bundle-superpowers
 
 includes:
-  - foundation:dev
-
-session:
-  context:
-    module: context-persistent
-    source: git+https://github.com/microsoft/amplifier-module-context-persistent@main
-    config:
-      max_tokens: 50000
-
-agents:
-  include:
-    - superpowers:tdd-enforcer
+  - bundle: git+https://github.com/microsoft/amplifier-foundation@main
 ---
 
-@superpowers:context/adapter.md
+# Superpowers TDD Bundle
 
-# Superpowers TDD-Only Bundle
+Test-driven development workflow with testing focus.
 
-Pure test-driven development enforcement.
+## What This Provides
 
-**Test first, code second, refactor third.**
+- TDD workflow guidance
+- Test-first development patterns
+- Red-green-refactor cycle support
+- Test coverage analysis
 
-## Available Agent
+## Usage
 
-- **tdd-enforcer**: Enforces strict TDD discipline - no code without tests
+```bash
+amplifier run --bundle superpowers-tdd "TDD this feature..."
+```
